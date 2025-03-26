@@ -1,0 +1,12 @@
+version: '3'
+services:
+  health_claims_demo:
+    hostname: health_claims_demo
+    env_file:
+     - ./.env
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+     - ${DATA_DIR}:/app/data
+    network_mode: "host"
